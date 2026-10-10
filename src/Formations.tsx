@@ -1,5 +1,5 @@
 import {useCallback,useEffect,useState} from 'react';
-import {Shield,Users,Check,RefreshCw,Send,Clock3} from 'lucide-react';
+import {Shield,Check,RefreshCw,Send,Clock3} from 'lucide-react';
 import {supabase} from './supabase';
 type Participant={id:string;display_name:string;status:string};
 type Formation={match_id:string;manager_id:string;team_one_label:string;team_two_label:string;state:string;revision:number};
