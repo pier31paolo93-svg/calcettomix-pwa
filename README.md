@@ -29,3 +29,19 @@ La workflow `.github/workflows/deploy.yml` pubblica su GitHub Pages quando esegu
 - Collegare VAPID pubblico, push subscription e permessi notifiche; verificare su Android e iOS.
 - Generare icone raster PNG 192/512 per migliore installabilità multipiattaforma; il logo attuale è un SVG **provvisorio**, sostituibile con quello ufficiale.
 - La funzionalità `create_booking` del frontend presume parametro `p_guest_names`: verificare firma SQL.
+
+## Versione 0.2 (lista d'attesa)
+
+`src/WaitlistOffers.tsx` mostra le offerte pendenti dell'utente autenticato e chiama `respond_waitlist_offer(p_offer,p_accept,p_selected_participants)` dopo una scelta esplicita. La UI usa l'orario del server (`expires_at`) per il conto alla rovescia, ma la scadenza definitiva è applicata dalla RPC. Necessario verificare RLS SELECT di `waitlist_offers`, `booking_participants`, `bookings` e test multiutente prima dell'uso.
+
+## Aggiornamento frontend 0.4 (pacchetto integrato)
+
+- Icona fornita dall'utente in `public/icons/icon-192.png` e `icon-512.png`, favicon, manifest e intestazione.
+- Swipe orizzontale tra sezioni (non circolare, ignora controlli e modali per non interferire con lo scroll).
+- Pagina Squadre/Formazioni, nomina responsabile e RPC di salvataggio/pubblicazione formazioni, lettura partecipanti e descrizioni libere delle maglie.
+- Pagina Quote con lettura pagamenti e dichiarazione tramite `confirm_booking_payment`.
+- Lista d'attesa e offerte parziali ereditate dalla v0.2.
+
+**Questo pacchetto non è ancora la versione finale da distribuire ai giocatori.** Non è stato possibile eseguire `npm install` nella macchina di costruzione (rete indisponibile); la verifica TypeScript completa e la build vanno effettuate tramite GitHub Actions **su un branch di prova** prima di sostituire la versione LIVE. Inoltre il backoffice CRUD, la sottoscrizione push e il collaudo dei permessi Supabase restano da completare. L'assegnazione del responsabile dipende dalle policy RLS su `profiles`; in alcuni progetti è necessario prevedere una RPC per l'elenco selezionabile. Se un'operazione RPC fallisce, il client mostra il messaggio di errore.
+
+**Distribuzione consigliata:** crea un branch `frontend-v04-test`, carica i file conservando la struttura del repository, verifica il workflow GitHub, prova con utenti di test e solo dopo effettua merge su `main`. Per l'icona installata, Android/iOS possono mantenere la vecchia icona per caching: disinstalla e reinstalla la PWA dopo l'aggiornamento.
