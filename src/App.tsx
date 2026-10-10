@@ -2,7 +2,7 @@ import WaitlistOffers from './WaitlistOffers';
 import Formations from './Formations';
 import Payments from './Payments';
 import { useEffect, useMemo, useState } from 'react';
-import { Bell, CalendarDays, Check, ChevronRight, CircleHelp, Clock3, CreditCard, Home, LogOut, MapPin, Plus, Settings2, Shield, Sparkles, Trophy, UserRound, Users, Wallet, X, Camera, LoaderCircle, LockKeyhole } from 'lucide-react';
+import { Bell, CalendarDays, Check, ChevronRight, CircleHelp, Clock3, CreditCard, Home, LogOut, MapPin, Plus, Settings2, Shield, Sparkles, Trophy, UserRound, Users, Wallet, X, Camera, LoaderCircle } from 'lucide-react';
 import { configured, publicAvatarUrl, supabase } from './supabase';
 import type { User } from '@supabase/supabase-js';
 
