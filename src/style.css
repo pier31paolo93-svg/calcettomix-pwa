@@ -29,3 +29,9 @@
 .admin-row-actions button{font-size:.8rem;padding:7px 10px}
 .admin-real h3{margin-top:28px}
 @media(max-width:520px){.admin-form-grid{grid-template-columns:1fr}.admin-editor{padding:12px}}
+
+/* CalcettoMix admin dettaglio v0.7 */
+.admin-editor .manage-row small{display:block;margin-top:5px}.admin-editor .manage-row .outline{margin-top:8px}.admin-editor .panel-title{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.admin-editor h4{margin:18px 0 8px}
+
+/* CalcettoMix v0.8 */
+.venue-management .admin-editor{margin:18px 0}.venue-management label{display:flex;flex-direction:column;gap:6px}.venue-management .admin-row-actions{display:flex;gap:8px;flex-wrap:wrap}.venue-management h3{display:flex;align-items:center;gap:8px}.venue-management textarea{width:100%;background:#161e2c;color:#eaf0f7;border:1px solid #344157;border-radius:10px;padding:10px}
