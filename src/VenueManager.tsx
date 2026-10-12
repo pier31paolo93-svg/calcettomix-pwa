@@ -1,5 +1,5 @@
 import {useCallback,useEffect,useState} from 'react';
-import {MapPin,Plus,RefreshCw,Save} from 'lucide-react';
+import {MapPin,RefreshCw,Save} from 'lucide-react';
 import {supabase} from './supabase';
 type Venue={id:string;name:string;active:boolean;address:string|null;city:string|null;notes:string|null;usual_cost:number|null};
 const blank={name:'',address:'',city:'Bologna',notes:'',usual_cost:'0'};
